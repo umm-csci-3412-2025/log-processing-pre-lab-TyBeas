@@ -21,7 +21,7 @@ The *pre-lab* is an *individual* project, but the lab will be done in pairs. You
 
 ## Pre-lab readings and resources
 
-Read the **entire** lab in advance (<https://classroom.github.com/g/Gkymc_Cv>) and definitely ask questions,
+Read the **entire** lab in advance (<https://github.com/UMM-CSci-Systems/Log-processing>) and definitely ask questions,
 especially conceptual ones.
 
 Below is a list of some key tools we'll use a lot in this lab. Some were covered in readings associated with the previous lab; others have links to potentially useful material that you should at least skim before lab.
@@ -34,7 +34,7 @@ Below is a list of some key tools we'll use a lot in this lab. Some were covered
 * [Google's charting tools](http://code.google.com/apis/chart/) support a broad range of sophisticated chart styles and types. In this lab we'll use Google's charting tools to visualize logging information from our lab.
 * <http://linux.die.net/abs-guide/textproc.html> has a ton of info on the tools mentioned above along with others that will likely prove useful in the lab (e.g., `wc`, `head`, `sort`, etc.)
 
-There's obviously tons of information on-line about all these tools, so feel free to search for other sources of info if these aren't working for you. You should do some background reading on/playing with these things before lab, though, so you don't spend all of the lab period Googling around for info on these tools.
+There's obviously tons of information on-line about all these tools, so feel free to search for other sources of info if these aren't working for you. You should do some background reading on these tools and try them out some before lab, though, so you don't spend all of the lab period Googling around for info on how to use these.
 
 ## Exercises
 
@@ -43,8 +43,10 @@ There's obviously tons of information on-line about all these tools, so feel fre
 In the full lab there are multiple occasions where we have some text that we want to wrap in a header and footer: The username distribution data is wrapped in its header and footer, the hours data is wrapped in its header and footer, the country distribution data is wrapped in its header and footer, and the combination of these texts is then wrapped in the overall header and footer. The script `wrap_contents.sh` is designed to automate this repeated process. It should take three arguments:
 
 1. The name of the file containing the "contents" that need to be wrapped,
-2. The name used to specify the desired header and footer,
+2. The name used to _specify_ the desired header and footer,
 3. The name of the resulting file.
+
+The second argument is a little odd because it's not an actual filename like the other two. It is instead the specifier for two filenames which are constructed by appending the specifier to (a) `_header.html` and (b) `_footer.html`. So if the specifier is `frogs` then the header file will need to be `frogs_header.html` and the footer file will need to be `frogs_footer.html`. Only the specifier is provided as the second argument, and your script will need to construct those two file names from the provided specifier.
 
 For example, this call:
 
@@ -52,7 +54,7 @@ For example, this call:
 ./wrap_contents.sh gloop.txt bits target.html
 ```
 
-will cause the contents of the file `gloop.txt` to be wrapped between the contents of `bits_header.html` and the contents of `bits_footer.html`, with the results being placed in `target.html`. This assumes that `gloop.txt`, `bits_header.html`, and `bits_footer.html` all exist.  The script should overwrite `target.html` if there was a file with that name.
+will cause the contents of the file `gloop.txt` to be wrapped between the contents of `bits_header.html` and the contents of `bits_footer.html`, with the results being placed in `target.html`. This assumes that `gloop.txt`, `bits_header.html`, and `bits_footer.html` all exist (you _don't_ need to make them).  The script should overwrite `target.html` if there was a file with that name.
 
 The actual joining of the files can be easily accomplished with `cat`. This should be a short little script; if you spend more than 15-20 minutes on it I would definitely start asking some questions. The trickiest part is probably forming the correct file names from the arguments you're given; curly braces might be useful there.
 
