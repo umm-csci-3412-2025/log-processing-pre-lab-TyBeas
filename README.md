@@ -278,13 +278,13 @@ output should go in a file with the name `r0_output.txt`,
 
 ```
 1. turkey.bacon.swiss.
-1. for here
+2. for here
 
 1. ham.cheddar.
-1. to go
+2. to go
 
 1. tunaSalad.
-1. to go
+2. to go
 ```
 
 ## What to turn in
