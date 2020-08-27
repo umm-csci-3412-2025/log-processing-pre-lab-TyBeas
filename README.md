@@ -238,7 +238,7 @@ In the `regex` folder there are three input files:
 
 * `r0_input.txt`
 * `r1_input.txt`
-* `r2_intput.txt`
+* `r2_input.txt`
 
 You should write a script `regex.sh` (in the folder `regex`)
 that uses a tool like
@@ -277,7 +277,7 @@ output should go in a file with the name `r0_output.txt`,
 
 ```english
 * I am KK. My favorite sandwich is turkey.
-* I am Nic. My favorite sandwich is avacado.
+* I am Nic. My favorite sandwich is avocado.
 * I am awesome. I love puppies, but I don't like sandwiches.
 * I am Vincent. My favorite sandwich is ham.
 ```
@@ -289,7 +289,7 @@ output should go in a file with the name `r0_output.txt`,
 2. turkey
 
 1. Nic
-2. avacado
+2. avocado
 
 1. Vincent
 2. ham
@@ -323,9 +323,9 @@ output should go in a file with the name `r0_output.txt`,
 Be sure to complete the following before the start of lab:
 
 * Accept (individually) the github classroom assignment
-* Do the Exercises (adding and commiting as you go)
+* Do the Exercises (adding and committing as you go)
   * [ ] Complete `wrap_contents.sh` (Exercise 1)
   * [ ] Produce `my_chart.html` with the pie chart (Exercise 2)
   * [ ] Implement `regex.sh` (Exercise 3)
-* Make sure you push your changes up to Gitub.
+* Make sure you push your changes up to GitHub.
 * Submit your URL to canvas when you are ready to be graded.
