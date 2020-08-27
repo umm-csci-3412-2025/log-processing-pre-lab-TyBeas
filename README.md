@@ -40,7 +40,29 @@ There's obviously tons of information on-line about all these tools, so feel fre
 
 ## Exercises
 
+### Add Bats dependencies
+
+:warning: **IMPORTANT** :warning: Because of a bug in GitHub's handling
+of templates, your copy of the repository _will not work_ as it is. You'll
+need to run three commands in the top level of the project to bring
+in three different `bats` dependencies:
+
+```bash
+git submodule add https://github.com/bats-core/bats-assert test/test_helper//bats-assert
+
+git submodule add https://github.com/bats-core/bats-support test/test_helper/bats-support
+
+git submodule add https://github.com/bats-core/bats-file test/test_helper/bats-file
+```
+
+If you don't do this, or don't do it in the right place, etc., then your
+Bats tests will almost certainly not run.
+
 ### Write `wrap_contents.sh`
+
+We've set up GitHub Actions for these tests, and the "Wrap tests" badge
+at the top of this README should (eventually) turn green when those
+tests pass.
 
 In the full lab there are multiple occasions where we have some text that we want to wrap in a header and footer: The username distribution data is wrapped in its header and footer, the hours data is wrapped in its header and footer, the country distribution data is wrapped in its header and footer, and the combination of these texts is then wrapped in the overall header and footer. The script `wrap_contents.sh` is designed to automate this repeated process. It should take three arguments:
 
