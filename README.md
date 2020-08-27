@@ -15,9 +15,9 @@ This is the pre-lab for the "Log processing" lab. It gives you some additional r
   * [Practice with regular expressions](#practice-with-regular-expressions)
     * [Regex examples](#regex-examples)
     * [Regex Exercises](#regex-exercises)
-    * [Regex 0](#regex-0)
-    * [Regex 1](#regex-1)
-    * [Regex 2](#regex-2)
+      * [Regex 0](#regex-0)
+      * [Regex 1](#regex-1)
+      * [Regex 2](#regex-2)
 * [What to turn in](#what-to-turn-in)
 
 ## Overview
@@ -119,7 +119,7 @@ _Regular expressions_ (or "regex" for short)
 are an extremely important tool in
 all software development, and they come up a _lot_ in systems
 work and scripting. Like so many things, learning the most
-commonly used 10% is 90% of the battle; not that many people
+commonly used 10% is 90% of the battle; few people
 can use the more esoteric features without looking things up.
 
 There are a _bunch_ of on-line resources to help you learn
@@ -134,8 +134,10 @@ at include:
   in a more puzzle-oriented form. They provide a set of
   "crosswords" where the clues are regular expressions, and
   you have to figure out what letter fits in a box and
-  satisfies the regexes for that cells row and column. Gets
-  tricky pretty fast.
+  satisfies the regexes for that cells row and column. The "Tutorial"
+  puzzles introduce all the basic ideas, and then the others
+  reinforce and expand on those. The advanced ones can be quite
+  tricky.
 
 As well as _learning_ tools like those above, there are also
 some neat tools that allow you to just check that your
@@ -174,7 +176,16 @@ and `[[:alnum:]]`, which is `[a-zA-Z0-9]`, but nothing that
 is exactly what `\w` since `alnum` doesn't include the
 underscore.
 
-Sigh – history is complicated.
+**Many tools support the `-E` flag**, which gives you _extended_
+regular expressions. This provides most of the goodies you typically
+want, so that's a good thing to try if your tool (.e.g., `grep` or
+`sed`) doesn't seem to be handling regexes in the way you expected.
+
+Sigh – history is complicated, even in computer science.
+
+```english
+¯\_(ツ)_/¯
+```
 
 #### Regex examples
 
@@ -248,7 +259,7 @@ output should go in a file with the name `r0_output.txt`,
 `r1_output.txt`, and `r2_output.txt`, respectively.
 (And yes, we basically did one for you.)
 
-#### Regex 0
+##### Regex 0
 
 **Input:**
 
@@ -271,7 +282,7 @@ output should go in a file with the name `r0_output.txt`,
 2. juice
 ```
 
-#### Regex 1
+##### Regex 1
 
 **Input:**
 
@@ -295,7 +306,7 @@ output should go in a file with the name `r0_output.txt`,
 2. ham
 ```
 
-#### Regex 2
+##### Regex 2
 
 **Input:**
 
