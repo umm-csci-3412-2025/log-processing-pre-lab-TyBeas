@@ -20,27 +20,13 @@ This is the pre-lab for the "Log processing" lab. It gives you some additional r
     * [Regex 2](#regex-2)
 * [What to turn in](#what-to-turn-in)
 
-* [Overview](#overview)
-* [Pre-lab readings and resources](#pre-lab-readings-and-resources)
-* [Exercises](#exercises)
-  * [Add Bats dependencies](#add-bats-dependencies)
-  * [Write `wrap_contents.sh`](#write-wrap_contentssh)
-    * [Make a sample pie chart using `wrap_contents.sh`](#make-a-sample-pie-chart-using-wrap_contentssh)
-  * [Practice with regular expressions](#practice-with-regular-expressions)
-    * [Regex examples](#regex-examples)
-    * [Regex Exercises](#regex-exercises)
-    * [Regex 0](#regex-0)
-    * [Regex 1](#regex-1)
-    * [Regex 2](#regex-2)
-* [What to turn in](#what-to-turn-in)
-
 ## Overview
 
 The goal of this pre-lab is to help prepare us for the "Log processing lab". In particular we'll provide a set of potentially useful readings on particular topics that might be useful, and do three small exercises:
 
-- [ ] Write a small "helper" shell script that will be useful when doing the lab itself.
-- [ ] See how we can use that helper script to construct HTML/Javascript files that use the Google Charts tools to generate a nice graph.
-- [ ] Experiment a little with regular expressions.
+* [ ] Write a small "helper" shell script that will be useful when doing the lab itself.
+* [ ] See how we can use that helper script to construct HTML/Javascript files that use the Google Charts tools to generate a nice graph.
+* [ ] Experiment a little with regular expressions.
 
 The *pre-lab* is an *individual* project, but the lab will be done in pairs. You should, again, clone your classroom repository and do your work in your copy. You should turn in the URL for your repository in whatever way the instructor requests.
 
@@ -97,7 +83,7 @@ The second argument is a little odd because it's not an actual filename like the
 
 For example, this call:
 
-```
+```bash
 ./wrap_contents.sh gloop.txt bits target.html
 ```
 
@@ -117,7 +103,7 @@ To give you an idea of what `wrap_contents.sh` will be used for in the lab, ther
 
 If you wrote your `wrap_contents.sh` script correctly, this call
 
-```
+```bash
 ../wrap_contents.sh meats.txt bread my_chart.html
 ```
 
@@ -140,15 +126,11 @@ There are a _bunch_ of on-line resources to help you learn
 to use regular expressions. A few that you might look
 at include:
 
-- https://regexone.com – a very nice, structured tutorial
+* [RegexOne.com](https://regexone.com) is a very nice, structured tutorial
   that takes you from the basics up through advanced usages
   in a nicely paced way.
-- http://play.inginf.units.it – a structured game that
-  also takes you from the basics up through advanced usage,
-  although it gets tricky fairly quickly. You have to
-  "pseudo-register", but
-  you can in fact just make stuff up if you want to.
-- https://regexcrossword.com – fun if you like your learning
+* [RegexCrossword.com](https://regexcrossword.com) is fun if you like
+  your learning
   in a more puzzle-oriented form. They provide a set of
   "crosswords" where the clues are regular expressions, and
   you have to figure out what letter fits in a box and
@@ -199,7 +181,7 @@ Sigh – history is complicated.
 To illustrate these differences, imagine we have an input
 file `r0_input.txt` that contains
 
-```
+```english
 * KK, muffins
 * Nic, donuts
 * Vincent, juice
@@ -208,7 +190,7 @@ file `r0_input.txt` that contains
 and we want to match and print out the name and
 breakfast snack in the form:
 
-```
+```english
 1. KK
 2. muffins
 
@@ -270,7 +252,7 @@ output should go in a file with the name `r0_output.txt`,
 
 **Input:**
 
-```
+```english
 * KK, muffins
 * Nic, donuts
 * Vincent, juice
@@ -278,7 +260,7 @@ output should go in a file with the name `r0_output.txt`,
 
 **Output:**
 
-```
+```english
 1. KK
 2. muffins
 
@@ -293,7 +275,7 @@ output should go in a file with the name `r0_output.txt`,
 
 **Input:**
 
-```
+```english
 * I am KK. My favorite sandwich is turkey.
 * I am Nic. My favorite sandwich is avacado.
 * I am awesome. I love puppies, but I don't like sandwiches.
@@ -302,7 +284,7 @@ output should go in a file with the name `r0_output.txt`,
 
 **Output:**
 
-```
+```english
 1. KK
 2. turkey
 
@@ -317,7 +299,7 @@ output should go in a file with the name `r0_output.txt`,
 
 **Input:**
 
-```
+```english
 * sandwich with turkey.bacon.swiss. for here
 * sandwich with ham.cheddar. to go
 * sandwich with tunaSalad. to go
@@ -325,7 +307,7 @@ output should go in a file with the name `r0_output.txt`,
 
 **Output:**
 
-```
+```english
 1. turkey.bacon.swiss.
 2. for here
 
@@ -342,8 +324,8 @@ Be sure to complete the following before the start of lab:
 
 * Accept (individually) the github classroom assignment
 * Do the Exercises (adding and commiting as you go)
-   - [ ] Complete `wrap_contents.sh` (Exercise 1)
-   - [ ] Produce `my_chart.html` with the pie chart (Exercise 2)
-   - [ ] Implement `regex.sh` (Exercise 3)
+  * [ ] Complete `wrap_contents.sh` (Exercise 1)
+  * [ ] Produce `my_chart.html` with the pie chart (Exercise 2)
+  * [ ] Implement `regex.sh` (Exercise 3)
 * Make sure you push your changes up to Gitub.
 * Submit your URL to canvas when you are ready to be graded.
