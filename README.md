@@ -12,6 +12,7 @@ This is the pre-lab for the "Log processing" lab. It gives you some additional r
 * [Pre-lab readings and resources](#pre-lab-readings-and-resources)
 * [Exercises](#exercises)
   * [Add Bats dependencies](#add-bats-dependencies)
+  * [Write clean code](#write-clean-code)
   * [Write `wrap_contents.sh`](#write-wrap_contentssh)
     * [Make a sample pie chart using `wrap_contents.sh`](#make-a-sample-pie-chart-using-wrap_contentssh)
   * [Practice with regular expressions](#practice-with-regular-expressions)
@@ -69,11 +70,25 @@ git submodule add https://github.com/bats-core/bats-file test/test_helper/bats-f
 If you don't do this, or don't do it in the right place, etc., then your
 Bats tests will almost certainly not run.
 
+### Write clean code
+
+One of the badges at the top of this README is the result of running
+`shellcheck` on all the shell scripts in this repository. It should be
+green when you start the lab, and you want to keep it green as you
+work through the lab. If you ever want to check a file by hand before
+you commit or push your work, something like
+
+```bash
+shellcheck wrap_contents.sh
+```
+
+should do the trick.
+
 ### Write `wrap_contents.sh`
 
-> We've set up GitHub Actions for the tests associated with this part of
-the lab, and the "Wrap tests" badge at the top of this README
-should (eventually) turn green when those tests pass.
+> We've set up GitHub Actions for the tests associated with this
+> part of the lab, and the "Wrap tests" badge at the top of this
+> README should (eventually) turn green when those tests pass.
 
 In the full lab there are multiple occasions where we have some text that we want to wrap in a header and footer: The username distribution data is wrapped in its header and footer, the hours data is wrapped in its header and footer, the country distribution data is wrapped in its header and footer, and the combination of these texts is then wrapped in the overall header and footer. The script `wrap_contents.sh` is designed to automate this repeated process. It should take three arguments:
 
@@ -246,6 +261,9 @@ awk 'match($0, /([[:alpha:]]+), ([[:alpha:]]+)/, groups) {print "1. " groups[1] 
 ```
 
 #### Regex Exercises
+
+> There's a GitHub Action set up for these tests as well, with
+> a corresponding badge up at the top of the README.
 
 In the `regex` folder there are three input files:
 
