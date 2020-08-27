@@ -4,7 +4,12 @@
 [![Regex tests](../../workflows/Regex%20tests/badge.svg)](../../actions?query=workflow%3A"Regex+tests")
 [![Shellcheck](../../workflows/shellcheck/badge.svg)](../../actions?query=workflow%3A"shellcheck")
 
-This is the pre-lab for the "Log processing" lab. It gives you some additional readings, along with practice with shell scripting, using Google Charts, and regular expressions.
+This is the pre-lab for the "Log processing" lab. It gives you some additional readings, along with practice with:
+
+* Shell scripting
+* Using Google Charts
+* Creating tags in `git`
+* Regular expressions
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -15,6 +20,7 @@ This is the pre-lab for the "Log processing" lab. It gives you some additional r
   * [Write clean code](#write-clean-code)
   * [Write `wrap_contents.sh`](#write-wrap_contentssh)
     * [Make a sample pie chart using `wrap_contents.sh`](#make-a-sample-pie-chart-using-wrap_contentssh)
+  * [Create a tag in `git`](#create-a-tag-in-git)
   * [Practice with regular expressions](#practice-with-regular-expressions)
     * [Regex examples](#regex-examples)
     * [Regex Exercises](#regex-exercises)
@@ -127,6 +133,53 @@ If you wrote your `wrap_contents.sh` script correctly, this call
 should produce an HTML file called `my_chart.html` that, when loaded in your favorite browser, displays a pie chart indicating preferences for different sandwich meats. Generate that HTML file (`my_chart.html`) and commit it as part of your repository.
 
 The file `chart_example/sample_chart.html` is an example of the kind of thing you're looking to create, so you should be able to compare your work to that; `wrap_tests.bats` will do that automatically but you should probably check it yourself as well.
+
+---
+
+### Create a tag in `git`
+
+Every commit in `git` gives you a "point in time" you can return to
+by checking out that commit. This is important if, for example, a
+customer calls up with a problem with version 2.7 which you release
+back in March. You might have numerous other commits (including possible
+bug fixes and the beginnings of new features) in the version on your
+computer. So `git` allows you to `checkout` any commit, as a way of
+travelling to that moment in time.
+
+Unfortunately, the default IDs for commits (things
+like `2f413425143cf11c6fd8c0b2baf1cdfb8153e24f`, or `2f41342` for short)
+are hardly memorable.
+Luckily, [`git` gives a way to _tag_ a particular commit](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+with a string that will presumably be more readable or memorable.
+We'll practice that here by creating a tag after you finish
+the `wrap_contents.sh` part of the lab. (Don't worry if you did it
+first or second, or interleaved the two parts, we'll just create a
+tag whenever you finish the `wrap_contents.sh` part of the lab.)
+
+To create a tag all you need to do is:
+
+```bash
+git tag -a <tag> -m <annotation>
+```
+
+where `<tag>` is the _tag name_ (often something like `v2.7`) and the
+`<annotation>` is the tagging message, much like a commit message that
+documents the creation of the tag. If you leave off the `-m <annotation>`
+part, it will open up an editor and give you a chance to enter an
+annotation there.
+
+:memo: **For this part of the lab use the tag `finished-wrap-contents`.**
+You can you any reasonable annotation message.
+
+To see the info about a tag, the command `git show <tag>` (e.g.,
+`git show v2.7`) will show you who made the tag and when, along with
+the annotation message. So you can use `git show finished-wrap-contents`
+to confirm that you've in fact made the desired tag.
+
+We're not going to use it here, but there is also a way to connect tags
+in `git` to _releases_ in GitHub. These can have additional information,
+as well as file artifacts like ZIP files containing the contents of the
+repository at that moment in time.
 
 ---
 
@@ -355,8 +408,9 @@ Be sure to complete the following before the start of lab:
 
 * Accept (individually) the github classroom assignment
 * Do the Exercises (adding and committing as you go)
-  * [ ] Complete `wrap_contents.sh` (Exercise 1)
-  * [ ] Produce `my_chart.html` with the pie chart (Exercise 2)
-  * [ ] Implement `regex.sh` (Exercise 3)
+  * [ ] Complete `wrap_contents.sh`
+  * [ ] Produce `my_chart.html` with the pie chart
+  * [ ] Create a `git` tag after finishing `wrap_contents.sh`
+  * [ ] Implement `regex.sh`
 * Make sure you push your changes up to GitHub.
 * Submit your URL to canvas when you are ready to be graded.
