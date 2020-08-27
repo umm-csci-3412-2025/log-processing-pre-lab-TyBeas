@@ -1,5 +1,7 @@
 # Log-processing-pre-lab
 
+[![Wrap contents tests](../../workflows/Wrap%20tests/badge.svg)](../../actions?query=workflow%3A"Wrap+tests")
+
 This is the pre-lab for the "Log processing" lab. It gives you some additional readings, along with practice with shell scripting, using Google Charts, and regular expressions.
 
 ## Table of Contents
