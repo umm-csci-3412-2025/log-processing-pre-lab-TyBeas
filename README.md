@@ -1,15 +1,38 @@
-# Log-processing-pre-lab
+# Log-processing-pre-lab <!-- omit in toc -->
 
 [![Wrap contents tests](../../workflows/Wrap%20tests/badge.svg)](../../actions?query=workflow%3A"Wrap+tests")
 
 This is the pre-lab for the "Log processing" lab. It gives you some additional readings, along with practice with shell scripting, using Google Charts, and regular expressions.
 
-## Table of Contents
+## Table of Contents <!-- omit in toc -->
 
 * [Overview](#overview)
-* [Readings](#pre-lab-readings-and-resources)
+* [Pre-lab readings and resources](#pre-lab-readings-and-resources)
 * [Exercises](#exercises)
-* [To Turn In](#what-to-turn-in)
+  * [Add Bats dependencies](#add-bats-dependencies)
+  * [Write `wrap_contents.sh`](#write-wrap_contentssh)
+    * [Make a sample pie chart using `wrap_contents.sh`](#make-a-sample-pie-chart-using-wrap_contentssh)
+  * [Practice with regular expressions](#practice-with-regular-expressions)
+    * [Regex examples](#regex-examples)
+    * [Regex Exercises](#regex-exercises)
+    * [Regex 0](#regex-0)
+    * [Regex 1](#regex-1)
+    * [Regex 2](#regex-2)
+* [What to turn in](#what-to-turn-in)
+
+* [Overview](#overview)
+* [Pre-lab readings and resources](#pre-lab-readings-and-resources)
+* [Exercises](#exercises)
+  * [Add Bats dependencies](#add-bats-dependencies)
+  * [Write `wrap_contents.sh`](#write-wrap_contentssh)
+    * [Make a sample pie chart using `wrap_contents.sh`](#make-a-sample-pie-chart-using-wrap_contentssh)
+  * [Practice with regular expressions](#practice-with-regular-expressions)
+    * [Regex examples](#regex-examples)
+    * [Regex Exercises](#regex-exercises)
+    * [Regex 0](#regex-0)
+    * [Regex 1](#regex-1)
+    * [Regex 2](#regex-2)
+* [What to turn in](#what-to-turn-in)
 
 ## Overview
 
@@ -60,9 +83,9 @@ Bats tests will almost certainly not run.
 
 ### Write `wrap_contents.sh`
 
-We've set up GitHub Actions for these tests, and the "Wrap tests" badge
-at the top of this README should (eventually) turn green when those
-tests pass.
+> We've set up GitHub Actions for the tests associated with this part of
+the lab, and the "Wrap tests" badge at the top of this README
+should (eventually) turn green when those tests pass.
 
 In the full lab there are multiple occasions where we have some text that we want to wrap in a header and footer: The username distribution data is wrapped in its header and footer, the hours data is wrapped in its header and footer, the country distribution data is wrapped in its header and footer, and the combination of these texts is then wrapped in the overall header and footer. The script `wrap_contents.sh` is designed to automate this repeated process. It should take three arguments:
 
@@ -84,7 +107,7 @@ The actual joining of the files can be easily accomplished with `cat`. This shou
 
 There is a simple set of tests in `wrap_tests.bats` that give you a sense of whether your implementation of `wrap_contents.sh` works.
 
-### Make a sample pie chart using `wrap_contents.sh`
+#### Make a sample pie chart using `wrap_contents.sh`
 
 To give you an idea of what `wrap_contents.sh` will be used for in the lab, there are three files in the the `chart_example` directory in this repository:
 
@@ -101,6 +124,8 @@ If you wrote your `wrap_contents.sh` script correctly, this call
 should produce an HTML file called `my_chart.html` that, when loaded in your favorite browser, displays a pie chart indicating preferences for different sandwich meats. Generate that HTML file (`my_chart.html`) and commit it as part of your repository.
 
 The file `chart_example/sample_chart.html` is an example of the kind of thing you're looking to create, so you should be able to compare your work to that; `wrap_tests.bats` will do that automatically but you should probably check it yourself as well.
+
+---
 
 ### Practice with regular expressions
 
