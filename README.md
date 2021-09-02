@@ -13,21 +13,21 @@ This is the pre-lab for the "Log processing" lab. It gives you some additional r
 
 ## Table of Contents <!-- omit in toc -->
 
-* [Overview](#overview)
-* [Pre-lab readings and resources](#pre-lab-readings-and-resources)
-* [Exercises](#exercises)
-  * [Add Bats dependencies](#add-bats-dependencies)
-  * [Write clean code](#write-clean-code)
-  * [Write `wrap_contents.sh`](#write-wrap_contentssh)
-    * [Make a sample pie chart using `wrap_contents.sh`](#make-a-sample-pie-chart-using-wrap_contentssh)
-  * [Create a tag in `git`](#create-a-tag-in-git)
-  * [Practice with regular expressions](#practice-with-regular-expressions)
-    * [Regex examples](#regex-examples)
-    * [Regex Exercises](#regex-exercises)
-      * [Regex 0](#regex-0)
-      * [Regex 1](#regex-1)
-      * [Regex 2](#regex-2)
-* [What to turn in](#what-to-turn-in)
+- [Overview](#overview)
+- [Pre-lab readings and resources](#pre-lab-readings-and-resources)
+- [Exercises](#exercises)
+  - [Add Bats dependencies](#add-bats-dependencies)
+  - [Write clean code](#write-clean-code)
+  - [Write `wrap_contents.sh`](#write-wrap_contentssh)
+    - [Make a sample pie chart using `wrap_contents.sh`](#make-a-sample-pie-chart-using-wrap_contentssh)
+  - [Create a tag in `git`](#create-a-tag-in-git)
+  - [Practice with regular expressions](#practice-with-regular-expressions)
+    - [Regex examples](#regex-examples)
+    - [Regex Exercises](#regex-exercises)
+      - [Regex 0](#regex-0)
+      - [Regex 1](#regex-1)
+      - [Regex 2](#regex-2)
+- [What to turn in](#what-to-turn-in)
 
 ## Overview
 
@@ -37,7 +37,14 @@ The goal of this pre-lab is to help prepare us for the "Log processing lab". In 
 * [ ] See how we can use that helper script to construct HTML/Javascript files that use the Google Charts tools to generate a nice graph.
 * [ ] Experiment a little with regular expressions.
 
-The *pre-lab* is an *individual* project, but the lab will be done in pairs. You should, again, clone your classroom repository and do your work in your copy. You should turn in the URL for your repository in whatever way the instructor requests.
+The *pre-lab* is an *individual* project, but the lab will be done in pairs.
+You should, again, create your repository through GitHub Classroom in that
+repository.
+
+**You will turn in _two things_ for this pre-lab:**
+
+- The URL for your repository in whatever way the instructor requests
+- The HTML file [described below](#make-a-sample-pie-chart-using-wrap_contentssh)
 
 ## Pre-lab readings and resources
 
