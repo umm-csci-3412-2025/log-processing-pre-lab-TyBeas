@@ -19,7 +19,7 @@ This is the pre-lab for the "Log processing" lab. It gives you some additional r
   - [Add Bats dependencies](#add-bats-dependencies)
   - [Write clean code](#write-clean-code)
   - [Write `wrap_contents.sh`](#write-wrap_contentssh)
-    - [Make a sample pie chart using `wrap_contents.sh`](#make-a-sample-pie-chart-using-wrap_contentssh)
+  - [Make a sample pie chart using `wrap_contents.sh`](#make-a-sample-pie-chart-using-wrap_contentssh)
   - [Create a tag in `git`](#create-a-tag-in-git)
   - [Practice with regular expressions](#practice-with-regular-expressions)
     - [Regex examples](#regex-examples)
@@ -35,6 +35,7 @@ The goal of this pre-lab is to help prepare us for the "Log processing lab". In 
 
 * [ ] Write a small "helper" shell script that will be useful when doing the lab itself.
 * [ ] See how we can use that helper script to construct HTML/Javascript files that use the Google Charts tools to generate a nice graph.
+* [ ] Create a _tag_ in `git`.
 * [ ] Experiment a little with regular expressions.
 
 The *pre-lab* is an *individual* project, but the lab will be done in pairs.
@@ -83,6 +84,15 @@ git submodule add https://github.com/bats-core/bats-file test/test_helper/bats-f
 If you don't do this, or don't do it in the right place, etc., then your
 Bats tests will almost certainly not run.
 
+If you're still getting errors (e.g., it can't find a file), you
+might try
+
+```bash
+  git submodule update --init --recursive
+```
+
+This frequently seems to fix mysterious `git` submodule problems.
+
 ### Write clean code
 
 One of the badges at the top of this README is the result of running
@@ -117,13 +127,19 @@ For example, this call:
 ./wrap_contents.sh gloop.txt bits target.html
 ```
 
-will cause the contents of the file `gloop.txt` to be wrapped between the contents of `bits_header.html` and the contents of `bits_footer.html`, with the results being placed in `target.html`. This assumes that `gloop.txt`, `bits_header.html`, and `bits_footer.html` all exist (you _don't_ need to make them).  The script should overwrite `target.html` if there was a file with that name.
+will cause the contents of the file `gloop.txt` to be wrapped
+between the contents of `bits_header.html` and the contents of
+`bits_footer.html`, with the results being placed in `target.html`.
+This assumes that `gloop.txt`, `bits_header.html`, and
+`bits_footer.html` all exist (you _don't_ need to make them).  The
+script should **overwrite** `target.html` if there was a file with
+that name.
 
 The actual joining of the files can be easily accomplished with `cat`. This should be a short little script; if you spend more than 15-20 minutes on it I would definitely start asking some questions. The trickiest part is probably forming the correct file names from the arguments you're given; curly braces might be useful there.
 
 There is a simple set of tests in `wrap_tests.bats` that give you a sense of whether your implementation of `wrap_contents.sh` works.
 
-#### Make a sample pie chart using `wrap_contents.sh`
+### Make a sample pie chart using `wrap_contents.sh`
 
 To give you an idea of what `wrap_contents.sh` will be used for in the lab, there are three files in the the `chart_example` directory in this repository:
 
@@ -137,7 +153,7 @@ If you wrote your `wrap_contents.sh` script correctly, this call
 ../wrap_contents.sh meats.txt bread my_chart.html
 ```
 
-should produce an HTML file called `my_chart.html` that, when loaded in your favorite browser, displays a pie chart indicating preferences for different sandwich meats. Generate that HTML file (`my_chart.html`) and commit it as part of your repository.
+should produce an HTML file called `my_chart.html` that, when loaded in your favorite browser, displays a pie chart indicating preferences for different sandwich meats. Generate that HTML file (`my_chart.html`) and **commit it as part of your repository**.
 
 The file `chart_example/sample_chart.html` is an example of the kind of thing you're looking to create, so you should be able to compare your work to that; `wrap_tests.bats` will do that automatically but you should probably check it yourself as well.
 
@@ -147,7 +163,7 @@ The file `chart_example/sample_chart.html` is an example of the kind of thing yo
 
 Every commit in `git` gives you a "point in time" you can return to
 by checking out that commit. This is important if, for example, a
-customer calls up with a problem with version 2.7 which you release
+customer calls up with a problem with version 2.7 which you released
 back in March. You might have numerous other commits (including possible
 bug fixes and the beginnings of new features) in the version on your
 computer. So `git` allows you to `checkout` any commit, as a way of
@@ -264,6 +280,17 @@ Sigh – history is complicated, even in computer science.
 ¯\_(ツ)_/¯
 ```
 
+Another nasty truth of the world is that most regex code is
+"write only" in the sense that it's really tough to read and
+understand. People often "hack around" until they get their
+regular expressions to work, and then no one ever really
+reads or understands them afterwards.
+
+That makes regular expressions a place where comments can
+really help. In some circumstances you can also do things like
+give names to parts of a regular by assigning them to variables,
+although that's not easy in `bash` scripts.
+
 #### Regex examples
 
 To illustrate these differences, imagine we have an input
@@ -294,6 +321,12 @@ you don't get the group matching (the `\1` in the "output"
 part of the match). You can use `[[:alpha:]]` in `sed`, but
 you can't use `\w`.
 
+In the first two examples we use `([a-zA-Z]+)` (in the first one)
+and `([[:alpha:]]+)`
+in the second to match the name and the (one word) breakfast snack.
+The parentheses allow us to "capture" what matches, and then
+"reprint" it using `\1` and `\2`.
+
 ```bash
 sed -E 's/\* ([a-zA-Z]+), ([a-zA-Z]+)/1. \1\n2. \2\n/' < r0_input.txt
 ```
@@ -307,6 +340,19 @@ regular expression clause, but we can use the `match` function
 to capture matches and put them in an array so we can access
 them later. `awk` (actually `gawk`, which is what `awk`
 defaults to in our lab) does allow `\w`, as well as `:alpha:`.
+
+Here an expression like
+
+```awk
+match($0, /([a-zA-Z]+), ([a-zA-Z]+)/, groups)
+```
+
+will try to match the whole line (`$0`) against the regex
+`([a-zA-Z]+), ([a-zA-Z]+)`. The parentheses again creates groups,
+but here they go into an array that we name in the third argument
+to `match`. We called it `groups` here, but you could call it
+`frogs` or whatever. Then you can access those in the associated
+action (e.g., `groups[2]` or `frogs[2]`).
 
 ```bash
 awk 'match($0, /([a-zA-Z]+), ([a-zA-Z]+)/, groups) {print "1. " groups[1] "\n" "2. " groups[2] "\n" }' < r0_input.txt
@@ -420,4 +466,4 @@ Be sure to complete the following before the start of lab:
   * [ ] Create a `git` tag after finishing `wrap_contents.sh`
   * [ ] Implement `regex.sh`
 * Make sure you push your changes up to GitHub.
-* Submit your URL to canvas when you are ready to be graded.
+* Submit your URL to Canvas when you are ready to be graded.
