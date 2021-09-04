@@ -6,10 +6,10 @@
 
 This is the pre-lab for the "Log processing" lab. It gives you some additional readings, along with practice with:
 
-* Shell scripting
-* Using Google Charts
-* Creating tags in `git`
-* Regular expressions
+- Shell scripting
+- Using Google Charts
+- Creating tags in `git`
+- Regular expressions
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -33,10 +33,10 @@ This is the pre-lab for the "Log processing" lab. It gives you some additional r
 
 The goal of this pre-lab is to help prepare us for the "Log processing lab". In particular we'll provide a set of potentially useful readings on particular topics that might be useful, and do three small exercises:
 
-* [ ] Write a small "helper" shell script that will be useful when doing the lab itself.
-* [ ] See how we can use that helper script to construct HTML/Javascript files that use the Google Charts tools to generate a nice graph.
-* [ ] Create a _tag_ in `git`.
-* [ ] Experiment a little with regular expressions.
+- [ ] Write a small "helper" shell script that will be useful when doing the lab itself.
+- [ ] See how we can use that helper script to construct HTML/Javascript files that use the Google Charts tools to generate a nice graph.
+- [ ] Create a _tag_ in `git`.
+- [ ] Experiment a little with regular expressions.
 
 The *pre-lab* is an *individual* project, but the lab will be done in pairs.
 You should, again, create your repository through GitHub Classroom in that
@@ -54,13 +54,13 @@ especially conceptual ones.
 
 Below is a list of some key tools we'll use a lot in this lab. Some were covered in readings associated with the previous lab; others have links to potentially useful material that you should at least skim before lab.
 
-* `bash` command line arguments. These were covered in some of the readings for the previous lab; [this tutorial](https://www.redhat.com/sysadmin/arguments-options-bash-scripts) also covers `bash` command line arguments specifically.
-* `bash` loops. If loops in `bash` feel like they're from another world, it's really because they are. They rather betray their age and the fact that they're kinda "hacked in" to a tool (`bash`) that wasn't really built with full-on programming in mind. [This tutorial](http://www.cyberciti.biz/faq/bash-for-loop/) and [that tutorial](http://tldp.org/LDP/abs/html/loops1.html) provide nice overviews and examples.
-* `awk` is a very powerful Unix tool that can be used to automate loads of shell processes, but it takes some effort to learn. In many ways you'd probably rather use a modern scripting language like Ruby or Python, but `awk` is part of most any Unix installation, where you may not have Python or Ruby by default. You might find [this tutorial](http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/) or [that tutorial](http://www.grymoire.com/Unix/Awk.html) useful.
-* `sed` (`s`tream `ed`itor) is another powerful, if old-school, standard Unix tools, that is particular useful doing "on-the-fly" editing of files or material coming through shell pipes. [this tutorial](http://www.grymoire.com/Unix/Sed.html) or [that tutorial](http://www.panix.com/~elflord/unix/sed.html) might help.
-* `grep` was used in the previous lab, but here are some more `grep` resources in case that's useful: [this tutorial](http://www.panix.com/~elflord/unix/grep.html) and [that tutorial](http://www.ee.surrey.ac.uk/Teaching/Unix/unix2.html)
-* [Google's charting tools](http://code.google.com/apis/chart/) support a broad range of sophisticated chart styles and types. In this lab we'll use Google's charting tools to visualize logging information from our lab.
-* [This tutorial on "Text processing commands"](http://linux.die.net/abs-guide/textproc.html) has a ton of info on the tools mentioned above along with others that will likely prove useful in the lab (e.g., `wc`, `head`, `sort`, etc.)
+- `bash` command line arguments. These were covered in some of the readings for the previous lab; [this tutorial](https://www.redhat.com/sysadmin/arguments-options-bash-scripts) also covers `bash` command line arguments specifically.
+- `bash` loops. If loops in `bash` feel like they're from another world, it's really because they are. They rather betray their age and the fact that they're kinda "hacked in" to a tool (`bash`) that wasn't really built with full-on programming in mind. [This tutorial](http://www.cyberciti.biz/faq/bash-for-loop/) and [that tutorial](http://tldp.org/LDP/abs/html/loops1.html) provide nice overviews and examples.
+- `awk` is a very powerful Unix tool that can be used to automate loads of shell processes, but it takes some effort to learn. In many ways you'd probably rather use a modern scripting language like Ruby or Python, but `awk` is part of most any Unix installation, where you may not have Python or Ruby by default. You might find [this tutorial](http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/) or [that tutorial](http://www.grymoire.com/Unix/Awk.html) useful.
+- `sed` (`s`tream `ed`itor) is another powerful, if old-school, standard Unix tools, that is particular useful doing "on-the-fly" editing of files or material coming through shell pipes. [this tutorial](http://www.grymoire.com/Unix/Sed.html) or [that tutorial](http://www.panix.com/~elflord/unix/sed.html) might help.
+- `grep` was used in the previous lab, but here are some more `grep` resources in case that's useful: [this tutorial](http://www.panix.com/~elflord/unix/grep.html) and [that tutorial](http://www.ee.surrey.ac.uk/Teaching/Unix/unix2.html)
+- [Google's charting tools](http://code.google.com/apis/chart/) support a broad range of sophisticated chart styles and types. In this lab we'll use Google's charting tools to visualize logging information from our lab.
+- [This tutorial on "Text processing commands"](http://linux.die.net/abs-guide/textproc.html) has a ton of info on the tools mentioned above along with others that will likely prove useful in the lab (e.g., `wc`, `head`, `sort`, etc.)
 
 There's obviously vast oceans of information on line about all these tools, so feel free to search for other sources of info if these aren't working for you. You should do some background reading on these tools and try them out some before lab, though, so you don't spend all of the lab period Googling around for info on how to use these.
 
@@ -143,9 +143,9 @@ There is a simple set of tests in `wrap_tests.bats` that give you a sense of whe
 
 To give you an idea of what `wrap_contents.sh` will be used for in the lab, there are three files in the the `chart_example` directory in this repository:
 
-* `meats.txt`
-* `bread_header.html`
-* `bread_footer.html`.
+- `meats.txt`
+- `bread_header.html`
+- `bread_footer.html`.
 
 If you wrote your `wrap_contents.sh` script correctly, this call
 
@@ -219,10 +219,10 @@ There are a _bunch_ of on-line resources to help you learn
 to use regular expressions. A few that you might look
 at include:
 
-* [RegexOne.com](https://regexone.com) is a very nice, structured tutorial
+- [RegexOne.com](https://regexone.com) is a very nice, structured tutorial
   that takes you from the basics up through advanced usages
   in a nicely paced way.
-* [RegexCrossword.com](https://regexcrossword.com) is fun if you like
+- [RegexCrossword.com](https://regexcrossword.com) is fun if you like
   your learning
   in a more puzzle-oriented form. They provide a set of
   "crosswords" where the clues are regular expressions, and
@@ -373,9 +373,9 @@ awk 'match($0, /([[:alpha:]]+), ([[:alpha:]]+)/, groups) {print "1. " groups[1] 
 
 In the `regex` folder there are three input files:
 
-* `r0_input.txt`
-* `r1_input.txt`
-* `r2_input.txt`
+- `r0_input.txt`
+- `r1_input.txt`
+- `r2_input.txt`
 
 You should write a script `regex.sh` (in the folder `regex`)
 that uses a tool like
@@ -459,11 +459,11 @@ output should go in a file with the name `r0_output.txt`,
 
 Be sure to complete the following before the start of lab:
 
-* Accept (individually) the github classroom assignment
-* Do the Exercises (adding and committing as you go)
-  * [ ] Complete `wrap_contents.sh`
-  * [ ] Produce `my_chart.html` with the pie chart
-  * [ ] Create a `git` tag after finishing `wrap_contents.sh`
-  * [ ] Implement `regex.sh`
-* Make sure you push your changes up to GitHub.
-* Submit your URL to Canvas when you are ready to be graded.
+- Accept (individually) the github classroom assignment
+- Do the Exercises (adding and committing as you go)
+  - [ ] Complete `wrap_contents.sh`
+  - [ ] Produce `my_chart.html` with the pie chart
+  - [ ] Create a `git` tag after finishing `wrap_contents.sh`
+  - [ ] Implement `regex.sh`
+- Make sure you push your changes up to GitHub.
+- Submit your URL to Canvas when you are ready to be graded.
