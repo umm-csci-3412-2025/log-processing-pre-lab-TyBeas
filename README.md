@@ -153,7 +153,8 @@ If you wrote your `wrap_contents.sh` script correctly, this call
 ../wrap_contents.sh meats.txt bread my_chart.html
 ```
 
-should produce an HTML file called `my_chart.html` that, when loaded in your favorite browser, displays a pie chart indicating preferences for different sandwich meats. Generate that HTML file (`my_chart.html`) and **commit it as part of your repository**.
+should produce an HTML file called `my_chart.html` that, when loaded in your favorite browser, displays a pie chart indicating preferences for different sandwich meats. Generate that HTML file (`my_chart.html`) and **commit it as part of your repository**. **You'll also need to submit
+that on Canvas along with the URL of your repository.**
 
 The file `chart_example/sample_chart.html` is an example of the kind of thing you're looking to create, so you should be able to compare your work to that; `wrap_tests.bats` will do that automatically but you should probably check it yourself as well.
 
@@ -466,4 +467,6 @@ Be sure to complete the following before the start of lab:
   - [ ] Create a `git` tag after finishing `wrap_contents.sh`
   - [ ] Implement `regex.sh`
 - Make sure you push your changes up to GitHub.
-- Submit your URL to Canvas when you are ready to be graded.
+- Submit the following to Canvas when you are ready to be graded:
+  - [ ] The URL of your repository, and
+  - [ ] Your `my_chart.html` file
