@@ -74,11 +74,9 @@ need to run three commands in the top level of the project to bring
 in three different `bats` dependencies:
 
 ```bash
-git submodule add https://github.com/bats-core/bats-assert test/test_helper//bats-assert
+git submodule init
 
-git submodule add https://github.com/bats-core/bats-support test/test_helper/bats-support
-
-git submodule add https://github.com/bats-core/bats-file test/test_helper/bats-file
+git submodule update
 ```
 
 If you don't do this, or don't do it in the right place, etc., then your
