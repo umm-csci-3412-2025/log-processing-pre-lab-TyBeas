@@ -198,6 +198,12 @@ To see the info about a tag, the command `git show <tag>` (e.g.,
 the annotation message. So you can use `git show finished-wrap-contents`
 to confirm that you've in fact made the desired tag.
 
+To push **all** your tags from a local repository to github be sure to use
+
+```bash
+git push --tags
+```
+
 We're not going to use it here, but there is also a way to connect tags
 in `git` to _releases_ in GitHub. These can have additional information,
 as well as file artifacts like ZIP files containing the contents of the
