@@ -191,7 +191,7 @@ part, it will open up an editor and give you a chance to enter an
 annotation there.
 
 :memo: **For this part of the lab use the tag `finished-wrap-contents`.**
-You can you any reasonable annotation message.
+You can use any reasonable annotation message.
 
 To see the info about a tag, the command `git show <tag>` (e.g.,
 `git show v2.7`) will show you who made the tag and when, along with
