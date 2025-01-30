@@ -20,6 +20,7 @@
 		data.addRow(['Cheese', 1]);
 		data.addRow(['Sausage', 6]);
 		data.addRow(['Steak', 2]);
+
 		var chart = new google.visualization.PieChart(document.getElementById('sandwich_dist_div'));
 		chart.draw(data, {width: 450, height: 300, title: 'Sandwich meat preferences'});
 	}
